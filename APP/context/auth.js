@@ -16,7 +16,10 @@ export const AuthProvider = ({ children }) => {
     setLoading(true)
     const response = await Login(object)
     await saveUser(response)
+    console.log('response login: ', response)
     if (response) {
+      //await AsyncStorage.setItem("userLogged", 'true');
+
       setSigned(true);
       setUser(response);
     }
